@@ -33,22 +33,19 @@ var data = [
 
 
 
-for(var a =0; a < data.length; a++)
-{
-	document.write(data.id);
-	document.write('</br>');
-}
-var test ={
-		id: 'box5',
-		title: 'Fifth box',
-		content: '<p>Lorem ipsum dolor sit amet!</p>',
-		categories: []
-}
 
-document.write(test.title);
-/*	for(var a = 0; a < data.length; a++)
-	{
-		for( var key in data ){
-		document.write('Value at key "' + key + '" in exampleOne: ' + data[key] + '<br>');
-	}
-	}*/
+function addElement()
+{
+
+	for(var a = 0; a < data.length; a++)
+{
+  div = document.createElement("div");
+  div.innerHTML = data[a].title;
+  div.innerHTML += data[a].content;
+  div.setAttribute('id',data[a].id);
+  div.classList.add(data[a].categories);
+   document.body.appendChild(div);
+}
+}
+ 
+
